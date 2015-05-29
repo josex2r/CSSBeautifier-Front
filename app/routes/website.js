@@ -2,27 +2,53 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function(params) {
-    var host = this.store.adapterFor('application').get('host');
-    var namespace = this.store.adapterFor('application').get('namespace');
-    var uri = "%@/%@/website/".fmt(host, namespace);
+    var host = 'http://dev.beautycss.com';
+    var namespace = 'api';
     var store = this.store;
-
+    //Promise
     return new Ember.RSVP.Promise(function(resolve, reject) {
+      //Get the website
+      var getWebsitesUrl = "%@/%@/website/".fmt(host, namespace);
       Ember.$.ajax({
-        url: uri,
+        url: getWebsitesUrl,
         type: 'post',
         dataType: 'json',
-        data: {website: params.url},
-        success: function(response){
-          //Save data into store
-          var website = store.createRecord('website', response);
+        data: {
+          website: params.url
+        }
+      }).done(function(response){
+        //Save website into store
+        var website = store.createRecord('website', response);
+        website.save();
+        //Get css files
+        var getCsssUrl = "%@/%@/website/%@".fmt(host, namespace, website.get('id'));
+        Ember.$.ajax({
+          url: getCsssUrl,
+          type: 'get',
+          dataType: 'json',
+          data: {
+            token: website.get('token')
+          }
+        }).done(function(response){
+          //Save css files into store
+          response.css.forEach(function(cssData){
+            var css = store.createRecord('css', cssData);
+            css.set('website', website);
+            css.save();
+            //Add website relation
+            website.get('css').pushObject(css);
+          });
+          //Update the website relations
           website.save();
+          //Finish request
           resolve(response);
-        },
-        error: function(response){
+        }).fail(function(){
           console.log(response);
           reject(response);
-        }
+        });
+      }).fail(function(response){
+        console.log(response);
+        reject(response);
       });
     });
   },
