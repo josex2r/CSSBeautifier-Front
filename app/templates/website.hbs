@@ -1,2 +1,7 @@
 <p>ID: {{model.id}}</p>
 <p>Token: {{model.token}}</p>
+<br/>
+<p>CSS List:</p>
+{{#each css in model.css}}
+  <p>{{css.id}} - {{css.url}}</p>
+{{/each}}
