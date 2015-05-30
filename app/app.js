@@ -2,6 +2,7 @@ import Ember from 'ember';
 import Resolver from 'ember/resolver';
 import loadInitializers from 'ember/load-initializers';
 import config from './config/environment';
+import Api from './models/api';
 
 var App;
 
@@ -16,18 +17,11 @@ App = Ember.Application.extend({
 });
 
 //Register global api
-var api = Ember.Object.extend({
-  host: 'http://dev.beautycss.com',
-  namespace: 'api',
-  getApiUrl: function(){
-    return "%@/%@/".fmt(this.host, this.namespace);
-  }
-});
 Ember.Application.initializer({
   name: 'api',
 
   initialize: function(container, application) {
-    application.register('api:main', api, {singleton: true});
+    application.register('api:main', Api, {singleton: true});
     application.inject('controller', 'api', 'api:main');
     application.inject('route', 'api', 'api:main');
   }
