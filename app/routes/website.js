@@ -61,6 +61,7 @@ export default Ember.Route.extend({
       console.log(error);
       // retry the transition
       //transition.retry();
+      return true;
     }
   }
 });
