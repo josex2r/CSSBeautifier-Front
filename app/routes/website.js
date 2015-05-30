@@ -2,13 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function(params) {
-    var host = 'http://dev.beautycss.com';
-    var namespace = 'api';
     var store = this.store;
+    var api = this.api;
     //Promise
     return new Ember.RSVP.Promise(function(resolve, reject) {
       //Get the website
-      var getWebsitesUrl = "%@/%@/website/".fmt(host, namespace);
+      var getWebsitesUrl = "%@website/".fmt(api.getApiUrl());
       Ember.$.ajax({
         url: getWebsitesUrl,
         type: 'post',
@@ -21,7 +20,7 @@ export default Ember.Route.extend({
         var website = store.createRecord('website', response);
         website.save();
         //Get css files
-        var getCsssUrl = "%@/%@/website/%@".fmt(host, namespace, website.get('id'));
+        var getCsssUrl = "%@website/%@".fmt(api.getApiUrl(), website.get('id'));
         Ember.$.ajax({
           url: getCsssUrl,
           type: 'get',
