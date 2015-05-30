@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 var Website = DS.Model.extend({
+  url: DS.attr('string'),
   token: DS.attr('string'),
   css: DS.hasMany('css')
 });

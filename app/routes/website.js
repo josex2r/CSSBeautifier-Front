@@ -18,6 +18,7 @@ export default Ember.Route.extend({
       }).done(function(response){
         //Save website into store
         var website = store.createRecord('website', response);
+        website.set('url', params.url);
         website.save();
         //Get css files
         var getCsssUrl = "%@website/%@".fmt(api.getApiUrl(), website.get('id'));
