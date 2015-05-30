@@ -6,13 +6,13 @@ import config from './config/environment';
 var App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
-Ember.LOG_VIEW_LOOKUPS = true;
-Ember.LOG_TRANSITIONS = true;
-Ember.LOG_BINDINGS = true;
 
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
-  Resolver: Resolver
+  Resolver: Resolver,
+  LOG_VIEW_LOOKUPS : true,
+  LOG_TRANSITIONS : true,
+  LOG_BINDINGS : true
 });
 
 //Register global api

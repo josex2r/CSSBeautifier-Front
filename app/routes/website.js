@@ -41,7 +41,7 @@ export default Ember.Route.extend({
           //Update the website relations
           website.save();
           //Finish request
-          resolve(response);
+          resolve(website);
         }).fail(function(){
           console.log(response);
           reject(response);

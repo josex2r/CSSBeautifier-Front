@@ -7,7 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('website', { path: '/website/:url' }, function(){
-    this.route('css', { path: '/css' });
+    this.route('css', { path: '/css/:id' });
   });
 });
 

@@ -3,5 +3,12 @@
 <br/>
 <p>CSS List:</p>
 {{#each css in model.css}}
-  <p>{{css.id}} - {{css.url}}</p>
+  <p>
+    {{#link-to 'website.css' css class="btn btn-default"}}{{css.id}} - {{css.url}}{{/link-to}}
+  </p>
 {{/each}}
+
+
+<div class="container">
+  {{outlet}}
+</div>
