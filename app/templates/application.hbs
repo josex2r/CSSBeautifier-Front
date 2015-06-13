@@ -1,10 +1,93 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div id="wrap">
+  <div id="cleaner">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	    <div class="search-box">
+        <form id="cse-search-box" class="navbar-form navbar-left" role="search">
+          <div>
+  	        <span class="inner-addon right-addon">
+              {{input id="website" type='text' value=websiteUrl size="55"}}
+  	        </span>
+            {{#link-to 'website' websiteUrl}}
+	            <i class="glyphicon glyphicon-search"></i>
+            {{/link-to}}
+  	      </div>
+  	    </form>
+	    </div>
+	  </div>
+    
+    <div class="row ">
+  		<div id="result_info"></div>
+  	</div>
 
-<form:form action="" method="get" class="navbar-form navbar-left" role="search">
-    <div class="form-group">
-        {{input type='text' value=websiteUrl placeholder='Search...' class="form-control"}}
-    </div>
-    {{#link-to 'website' websiteUrl class="btn btn-default"}}Submit{{/link-to}}
-</form:form>
+    {{outlet}}
 
-{{outlet}}
+  </div>
+
+  <div class="container">
+  	<div class="row" style="text-align: left;">
+  	    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+  	        <div class="row">
+  	            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  	                <h1>{{t "title.app"}}</h1>
+  	                <h2>{{t "title.home1"}}</h2>
+  	                <p><b>{{t "title.app"}}</b> {{t "content.home1"}}</p>
+  	            </div>
+  	            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  	                <h2>{{t "title.home2"}}</h2>
+  	                <p>{{t "content.home2"}}</p>
+  	            </div>
+  	            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  	                <h2>{{t "title.home3"}}</h2>
+  	                <p>{{t "content.home3"}}</p>
+  	            </div>
+  	        </div>
+  	    </div>
+  	    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+  	        <h2>{{t "label.about"}}</h2>
+  	        <h3>
+              <a href="https://github.com/avara1986/" target="_blank">
+                {{fa-icon "github-square"}} Alberto Vara
+              </a>
+            </h3>
+  	        <h3>
+              <a href="https://github.com/josex2r/" target="_blank">
+                {{fa-icon "github-square"}} Jose Luis Represa
+              </a>
+            </h3>
+  	        <h3>
+              <a href="hhttp://www.lauragllamas.com/" target="_blank">
+                {{fa-icon "wordpress"}} Laura García
+              </a>
+            </h3>
+  	        <h3>
+              <a href="http://www.naomipastor.com/" target="_blank">
+                {{fa-icon "wordpress"}} Naomi Pastor
+              </a>
+            </h3>
+  	        <p></p>
+  	    </div>
+  	</div>
+  	<div class="row" style="text-align: left;">
+  	    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+  	        <h2>{{t "label.partners"}}</h2>
+  	        <div class="row">
+  	            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+  	              <a href="http://brandidosmagazine.com/" target="_blank">
+                    <img src="/img/brandidos.jpg" style="width: 100px;">
+                  </a>
+  	            </div>
+  	            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+  	              <a href="http://naomipastor.com/" target="_blank">
+                    <img src="/img/naomi.png" style="width: 86px;">
+                  </a>
+  	            </div>
+  	            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+  	              <a href="http://www.we-ma.com/" target="_blank">
+                    <img src="/img/wema.jpg" style="width: 86px;">
+                  </a>
+  	            </div>
+  	        </div>
+  	    </div>
+  	</div>
+  </div>
+</div>
