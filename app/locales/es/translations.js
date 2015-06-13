@@ -1,21 +1,21 @@
 export default {
   'title': {
     'app': 'CSS Beautifier',
-    'home1': 'Remove the unused CSS rules',
-    'home2': 'New release of the website',
-    'home3': 'My Website use JS/AJAX'
+    'home1': 'Eliminar las reglas no necesarias',
+    'home2': 'Nueva versión del sitio',
+    'home3': 'Mi página utiliza JS/AJAX'
   },
   'content': {
-    'home1': 'analyze a single website page and your CSS files looking for the CSS rules that isn\'t used. Then, it cleans your CSS without the code that you don\'t use in your website and return the new CSS code that you could copy-paste in your file or link our API.',
-    'home2': 'At this moment, CSS Beautifier is on Beta. If you find a bug, please, contact us or fork this proyect on GitHub and make all changes that you want and commit it ;)',
-    'home3': 'CSS Beautifier can\'t analyze the layers and CSS rules created by JS or AJAX. We recommend you create a file "styles_js.css" and add this rules there because if you don\'t, CSS beautifier remove it.'
+    'home1': 'analiza los archivos CSS de una página web buscando las reglas CSS no utilizadas. Luego, limpia el código CSS que no se utiliza en tu web y devuelve el nuevo código optimizado para que lo puedas copiar y pegar.',
+    'home2': 'Ahora, CSS Beautifier está en fase BETA. Si encuentras un bug, por favor, contáctanos forkeando el repositorio de GitHub y enviando una pull-request ;)',
+    'home3': 'CSS Beautifier no puede analizar el código generado por JS o AJAX. Te recomendamos creaar un fichero "styles_js.css" y añadir esas reglas, si no, CSS beautifier las eliminará.'
   },
   'label': {
-    'about': 'About us',
+    'about': 'Acerca de',
     'partners': 'Partners',
     'original': 'Original',
-    'originalCompressed': 'Original Compressed',
-    'beauty': 'Clean without unsued rules',
-    'beautyCompressed': 'Clean without unsued rules compressed'
+    'originalCompressed': 'Original Comprimido',
+    'beauty': 'Limpio',
+    'beautyCompressed': 'Limpio Comprimido'
   }
 };
