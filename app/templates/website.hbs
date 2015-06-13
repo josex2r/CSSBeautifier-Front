@@ -1,0 +1,16 @@
+<div class="container">
+  <p>ID: {{model.id}}</p>
+  <p>Token: {{api-token 'test'}}</p>
+  <br/>
+  <p>CSS List:</p>
+  {{#each css in model.css}}
+    <p>
+      {{#link-to 'website.css' css class="btn btn-default"}}{{css.id}} - {{css.url}}{{/link-to}}
+    </p>
+  {{/each}}
+</div>
+
+
+<div class="container">
+  {{outlet}}
+</div>
