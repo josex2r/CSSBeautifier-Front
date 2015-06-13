@@ -3,13 +3,14 @@
   <p>Token: {{api-token 'test'}}</p>
   <br/>
   <p>CSS List:</p>
-  {{#each css in model.css}}
-    <p>
-      {{#link-to 'website.css' css class="btn btn-default"}}{{css.id}} - {{css.url}}{{/link-to}}
-    </p>
-  {{/each}}
+  {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
+    {{#paper-list}}
+      {{#each css in model.css}}
+        {{website-list-item item=css}}
+      {{/each}}
+    {{/paper-list}}
+  {{/paper-content}}
 </div>
-
 
 <div class="container">
   {{outlet}}

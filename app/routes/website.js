@@ -7,6 +7,12 @@ export default Ember.Route.extend({
     return adapter.findOrFetch('website', params.url);
   },
 
+  actions: {
+    getCssData: function(){
+      console.log(arguments)
+    }
+  },
+
   events: {
     // then this hook will be fired with the error and most importantly a Transition
     // object which you can use to retry the transition after you handled the error
