@@ -28,8 +28,16 @@ export default Ember.Object.extend({
     return "%@website/".fmt(this.get('apiUrl'));
   }.property('apiUrl'),
 
-  cssUrl:function(websiteId){
+  cssListUrl: function(websiteId){
     return "%@website/%@".fmt(this.get('apiUrl'), websiteId);
+  },
+
+  cssUrl: function(){
+    return "%@css/".fmt(this.get('apiUrl'));
+  }.property('apiUrl'),
+
+  cssDataUrl: function(cssId){
+    return "%@%@".fmt(this.get('cssUrl'), cssId);
   },
 
   /*
@@ -69,7 +77,7 @@ export default Ember.Object.extend({
   /*
    * Retrieves css list
    */
-  fetchCss: function(website){
+  fetchCssList: function(website){
     var self = this;
     var store = this.get('store');
     var websiteId = website.get('id');
@@ -77,7 +85,7 @@ export default Ember.Object.extend({
     return new Ember.RSVP.Promise(function(resolve, reject) {
       //Get the list
       Ember.$.ajax({
-        url: self.cssUrl(websiteId),
+        url: self.cssListUrl(websiteId),
         type: 'get',
         dataType: 'json',
         data: {
@@ -117,7 +125,7 @@ export default Ember.Object.extend({
       self.fetchWebsite(websiteUrl).then(
         //OK
         function(website){
-          self.fetchCss(website).then(
+          self.fetchCssList(website).then(
             //OK
             function(website){
               resolve(website);
@@ -134,6 +142,96 @@ export default Ember.Object.extend({
         }
       );
     });
-  }
+  },
+
+  /*
+   * Retrieves website, token & css list
+   */
+  fetchCssData: function(css){
+    var self = this;
+    var cssId = css.get('id');
+
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      //Get css data
+      Ember.$.ajax({
+        url: self.cssDataUrl(cssId),
+        type: 'get',
+        dataType: 'json',
+        data: {
+          token: self.get('token')
+        }
+      }).done(function(response){
+        //Save css data into store
+        css.set('created', response.created || '');
+        css.set('original', response.original || '');
+        css.set('originalCompressed', response.original_compressed || '');
+        css.set('beauty', response.beauty || '');
+        css.set('beautyCompressed', response.beauty_compressed || '');
+        css.set('isCompleted', true);
+        css.save();
+        //Finish request
+        resolve(css);
+      }).fail(function(response){
+        console.log(response);
+        reject(response);
+      });
+    });
+  },
+
+  /*
+   * Retrieves website, token & css list
+   */
+  fetchCleanedCssData: function(css){
+    var self = this;
+    var cssId = css.get('id');
+
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      //Get css data
+      Ember.$.ajax({
+        url: self.get('cssUrl'),
+        type: 'post',
+        dataType: 'text',
+        data: {
+          id: cssId,
+          token: self.get('token')
+        }
+      }).done(function(response){
+        //Finish request
+        resolve(css);
+      }).fail(function(response){
+        console.log(response);
+        reject(response);
+      });
+    });
+  },
+
+  /*
+   * Retrieves all css data
+   */
+  fetchFullCssData: function(css){
+    var self = this;
+
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      self.fetchCleanedCssData(css).then(
+        //OK
+        function(css){
+          self.fetchCssData(css).then(
+            //OK
+            function(css){
+              resolve(css);
+            },
+            //KO
+            function(error){
+              reject(error);
+            }
+          );
+        },
+        //KO
+        function(error){
+          reject(error);
+        }
+      );
+    });
+  },
 
 });
