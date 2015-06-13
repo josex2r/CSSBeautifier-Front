@@ -12,6 +12,10 @@ export default {
   },
   'label': {
     'about': 'About us',
-    'partners': 'Partners'
+    'partners': 'Partners',
+    'original': 'Original',
+    'originalCompressed': 'Original Compressed',
+    'beauty': 'Clean without unsued rules',
+    'beautyCompressed': 'Clean without unsued rules compressed'
   }
 };
