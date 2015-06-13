@@ -12,9 +12,9 @@ export default Ember.Route.extend({
   },
 
   afterModel: function(model){
-    if(!model.get('isCompleted')){
-      return this.cssApi.fetchFullCssData(model);
-    }
+    var adapter = this.store.adapterFor('application');
+
+    return adapter.findOrFetch('css', model);
   },
 
   events: {
