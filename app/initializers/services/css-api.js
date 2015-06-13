@@ -8,6 +8,7 @@ export default {
     // Inject into all routes and controllers
     app.inject('route', 'cssApi', 'service:css-api');
     app.inject('controller', 'cssApi', 'service:css-api');
+    app.inject('adapter', 'cssApi', 'service:css-api');
 
     app.inject('helper:api-token', 'cssApi', 'service:css-api');
   }

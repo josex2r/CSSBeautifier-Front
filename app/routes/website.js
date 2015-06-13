@@ -1,11 +1,10 @@
 import Ember from 'ember';
-import LocaleMixin from '../mixins/locale';
 
-export default Ember.Route.extend(LocaleMixin, {
+export default Ember.Route.extend({
   model: function(params) {
+    var adapter = this.store.adapterFor('application');
 
-    return this.cssApi.fetchFullWebsite(params.url);
-
+    return adapter.findOrFetch('website', params.url);
   },
 
   events: {

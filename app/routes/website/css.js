@@ -1,7 +1,6 @@
 import Ember from 'ember';
-import LocaleMixin from '../mixins/locale';
 
-export default Ember.Route.extend(LocaleMixin, {
+export default Ember.Route.extend({
   model: function(params) {
     var website = this.modelFor('website');
     var aCss = website.get('css');
