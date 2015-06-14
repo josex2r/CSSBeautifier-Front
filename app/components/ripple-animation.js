@@ -6,14 +6,14 @@ export default Ember.Component.extend({
     var $ = Ember.$;
     var $el = this.$();
     var parent, ink, d, x, y;
-    console.log($el.children().children().children())
+
     $el.children().children().children().click(function(e){
     	parent = $(this).parent();
 
       parent.css('overflow', 'hidden');
 
     	//create .ink element if it doesn't exist
-    	if(parent.find(".ink").length == 0){
+    	if(parent.find(".ink").length === 0){
     		parent.prepend("<span class='ink'></span>");
       }
 

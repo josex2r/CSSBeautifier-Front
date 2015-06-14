@@ -17,5 +17,11 @@ export default {
     'originalCompressed': 'Original Compressed',
     'beauty': 'Clean without unsued rules',
     'beautyCompressed': 'Clean without unsued rules compressed'
+  },
+  'btn': {
+    'original': 'Original',
+    'originalCompressed': 'Compressed',
+    'beauty': 'Cleaned',
+    'beautyCompressed': 'Optimized'
   }
 };

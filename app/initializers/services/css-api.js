@@ -4,6 +4,7 @@ export default {
   initialize: function(container, app) {
     // Make the ember-data store available in the service
     app.inject('service:css-api', 'store', 'store:main');
+    app.inject('component', 'store', 'store:main');
 
     // Inject into all routes and controllers
     app.inject('route', 'cssApi', 'service:css-api');

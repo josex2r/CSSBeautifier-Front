@@ -1,4 +1,6 @@
- @import 'ember-paper';
+@import 'bootswatch.scss';
+
+@import 'ember-paper';
 
 .md-tile-right{
   margin-right: 0px;
@@ -7,6 +9,25 @@
 md-divider[md-inset].both {
   margin-left: 80px;
   margin-right: 80px;
+}
+
+.progress.divider.both {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.btn-group.divider.both {
+  margin-left: 80px;
+  margin-right: 80px;
+  width: auto;
+}
+
+.btn-group-justified > .btn, .btn-group-justified > a > .btn-group {
+  float: none;
+  display: table-cell;
+  width: 1%;
 }
 
 /*.ink styles - the elements which will create the ripple effect. The size and position of these elements will be set by the JS code. Initially these elements will be scaled down to 0% and later animated to large fading circles on user click.*/

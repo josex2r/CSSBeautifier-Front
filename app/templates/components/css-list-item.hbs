@@ -1,0 +1,59 @@
+{{#ripple-animation}}
+  {{#paper-item}}
+    {{#paper-tile-left}}
+      <img src="/img/css3.ico" class="face" width="100px" />
+    {{/paper-tile-left}}
+
+    {{#paper-tile-content}}
+      <h3>CSS File</h3>
+      <h4>ID: {{item.id}}</h4>
+      <p>
+        URL: {{item.url}}
+      </p>
+    {{/paper-tile-content}}
+
+    {{#paper-tile-left classNames="md-tile-right"}}
+      {{#paper-button action="toggleData"}}
+        {{fa-icon "search" size="lg"}}
+      {{/paper-button}}
+    {{/paper-tile-left}}
+  {{/paper-item}}
+{{/ripple-animation}}
+
+{{#if isCompleted}}
+  <div class="btn-group btn-group-justified divider both" role="group">
+    <div class="btn-group" role="group" {{action "openCssData" "original"}}>
+      {{#paper-button classNames="md-primary btn btn-default" raised=true}}
+        {{t "btn.original"}}
+      {{/paper-button}}
+    </div>
+
+    <div class="btn-group" role="group" {{action "openCssData" "originalCompressed"}}>
+      {{#paper-button classNames="md-primary btn btn-default" raised=true}}
+        {{t "btn.originalCompressed"}}
+      {{/paper-button}}
+    </div>
+
+    <div class="btn-group" role="group" {{action "openCssData" "beauty"}}>
+      {{#paper-button classNames="md-primary btn btn-default" raised=true}}
+        {{t "btn.beauty"}}
+      {{/paper-button}}
+    </div>
+
+    <div class="btn-group" role="group" {{action "openCssData" "beautyCompressed"}}>
+      {{#paper-button classNames="md-primary btn btn-default" raised=true}}
+        {{t "btn.beautyCompressed"}}
+      {{/paper-button}}
+    </div>
+  </div>
+{{/if}}
+
+{{#if isLoading}}
+  <div class="bs-component">
+    <div class="progress progress-striped active divider both">
+      <div class="progress-bar" style="width: 45%"></div>
+    </div>
+  </div>
+{{/if}}
+
+{{paper-divider inset=true classNames="both"}}
