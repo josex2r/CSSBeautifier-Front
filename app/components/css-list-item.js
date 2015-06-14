@@ -5,7 +5,17 @@ export default Ember.Component.extend({
 
   isLoading: false,
 
+  index: 0,
+
   isCompleted: Ember.computed.alias('item.isCompleted'),
+
+  didInsertElement: function () {
+    var index = this.get('index');
+    var $el = this.$().find('md-item-content');
+    setTimeout(function(){
+      $el.addClass('relocateCssListItem');
+    }, index * 600);
+  },
 
   actions: {
     toggleData: function(){

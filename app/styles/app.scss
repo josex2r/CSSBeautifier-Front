@@ -1,6 +1,22 @@
+@import 'beautify.scss';
+
 @import 'bootswatch.scss';
 
 @import 'ember-paper';
+
+.paper-item{
+  background-color: rgba(255, 255, 255, .95);
+  transition: .8s;
+}
+md-item-content{
+  margin-top: -40px;
+  opacity: 0;
+  transition: .8s;
+}
+md-item-content.relocateCssListItem{
+  margin-top: 0px;
+  opacity: 1;
+}
 
 .md-tile-right{
   margin-right: 0px;
