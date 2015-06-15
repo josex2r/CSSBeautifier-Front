@@ -2,7 +2,9 @@
   {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
     {{#paper-list}}
       {{#each css in model.css}}
-        {{css-list-item item=css openCssData="goToCss" index=_view.contentIndex}}
+        {{#view "slide-show-view"}}
+          {{css-list-item item=css openCssData="goToCss" index=_view.contentIndex}}
+        {{/view}}
       {{/each}}
     {{/paper-list}}
   {{/paper-content}}

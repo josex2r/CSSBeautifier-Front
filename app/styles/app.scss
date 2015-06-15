@@ -1,7 +1,15 @@
-@import 'beautify.scss';
+/*
+ * Colors
+ */
+$white: rgba(255, 255, 255, .95);
+$blueRipple: rgba(3, 169, 244, .4);
 
+@import 'beautify.scss';
 @import 'bootswatch.scss';
 
+/*
+ * Paper elements
+ */
 @import 'ember-paper';
 
 md-content{
@@ -9,15 +17,21 @@ md-content{
   transition: 1.5s;
 }
 md-content.colorize{
-  background-color: rgba(255, 255, 255, .95);
+  background-color: $white;
   box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 md-list > div{
-  background-color: rgba(255, 255, 255, .95);
+  background-color: $white;
 }
-.paper-item{
-  background-color: rgba(255, 255, 255, .95);
+.paper-item, md-card{
+  background-color: $white;
   transition: .8s;
+}
+md-input-group{
+  margin: 0;
+}
+md-input-group input{
+  width: 100%;
 }
 md-item-content{
   margin-top: -40px;
@@ -28,39 +42,36 @@ md-item-content.relocateCssListItem{
   margin-top: 0px;
   opacity: 1;
 }
-
 .md-tile-right{
   margin-right: 0px;
 }
-
 md-divider[md-inset].both {
   margin-left: 80px;
   margin-right: 80px;
 }
-
 .progress.divider.both {
   margin-left: 80px;
   margin-right: 80px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
 .btn-group.divider.both {
   margin-left: 80px;
   margin-right: 80px;
   width: auto;
 }
-
 .btn-group-justified > .btn, .btn-group-justified > a > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
 
-/*.ink styles - the elements which will create the ripple effect. The size and position of these elements will be set by the JS code. Initially these elements will be scaled down to 0% and later animated to large fading circles on user click.*/
+/*
+ * Ripple effect
+ */
 .ink {
 	display: block; position: absolute;
-	background: rgba(3, 169, 244, .4);
+	background: $blueRipple;
 	border-radius: 100%;
 	transform: scale(0);
 }

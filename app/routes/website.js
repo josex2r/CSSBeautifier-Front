@@ -5,6 +5,11 @@ export default Ember.Route.extend(BaseRouteMixin, {
   model: function(params) {
     var adapter = this.store.adapterFor('application');
 
+    var appController = this.controllerFor('application');
+    if(!appController.get('websiteUrl')){
+      appController.set('websiteUrl', params.url);
+    }
+
     return adapter.findOrFetch('website', params.url);
   },
 

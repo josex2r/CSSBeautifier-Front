@@ -7,126 +7,32 @@ html,body {
   background: #ccc;
   height: 100%;
 }
-
 #wrap {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto -60px;
 }
-
 .container {
-	width: auto;
 	text-align: center;
 }
-
-#push,#footer {
-  height: 60px;
-}
-
 #cleaner{
 	background: url("../img/background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  padding-top: 40px;
   padding-bottom: 40px;
   margin: 0px;
   transition: 1s;
 }
-
-#cleaner .row{
-	margin:0px;
-}
-
-/* BUSCADOR */
-.inner-addon {
-    position: relative;
-}
-
-/* style icon */
-.inner-addon .glyphicon {
-  position: absolute;
-  padding: 10px;
-  pointer-events: none;
-}
-
-/* align icon */
-.left-addon .glyphicon  { left:  0px;}
-.right-addon .glyphicon { right: 0px;}
-
-/* add padding  */
-.left-addon input  { padding-left:  30px; }
-.right-addon input { padding-right: 30px; }
-.search-box{
-    text-align: center;
-    /* padding-top: 150px; */
-    font-size: 34px;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 1px 1px #333;
-    width: 100%;
-    padding: 0px;
-    margin: 0 0 20px;
-    padding-top: 150px;
-}
-.search-box input[type=text]{
-    color: #1abc9c;
-}
-.search-box input[type=submit]{
-  /* margin: -8px; */
-  padding: 12px;
-  background: #1abc9c;
-  border: 0px;
-  /* margin-top: -9px; */
-  font-size: 14px;
-  position: relative;
-  top: -6px;
-  left: -9px;
-  padding-bottom: 12px;
-}
-#website{
-  width: 44%;
-  border-radius: 17px;
-  border: 0px;
-  padding-left: 20px;
-  font-size: 28px;
-  padding-top: 7px;
-  padding-bottom: 3px;
-}
-.right-addon .glyphicon {
-  right: 15px;
-  color: #333;
-  top: -3px;
-  font-size: 27px;
-}
-input[type='submit'] {
-  display:none;
-}
-/* FIN BUSCADOR */
-.error, .loading, .info{
-    display: none;
-    font-size: 20px;
-    margin-top: 15px;
-}
-textarea{
-    border: 1px solid #aaa;
-    font-size: 12px;
-    width: 100%;
-}
-#css_info_msg ul{
-    color: #333;
-    text-align: left;
-}
-#css_info_msg ul li{
-    background: none repeat scroll 0 0 #fff;
-    border: 1px solid #aaa;
-    list-style: outside none none;
-    margin-top: 10px;
-    padding: 10px;
-}
-#css_info_msg ul li a{
-    float: right;
+#searchWebsite{
+  border-radius: 40px;
+  width: 75px;
+  height: 75px;
+  font-size: 2em;
+  line-height: 0em;
 }
 
 .flip {
