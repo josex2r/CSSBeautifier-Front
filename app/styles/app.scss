@@ -3,6 +3,7 @@
  */
 $white: rgba(255, 255, 255, .95);
 $blueRipple: rgba(3, 169, 244, .4);
+$blue: #039be5;
 
 @import 'beautify.scss';
 @import 'bootswatch.scss';
@@ -32,6 +33,8 @@ md-input-group{
 }
 md-input-group input{
   width: 100%;
+  font-size: 25px !important;
+  color: $blue !important;
 }
 md-item-content{
   margin-top: -40px;
