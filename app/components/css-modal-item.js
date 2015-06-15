@@ -4,6 +4,8 @@ export default Ember.Component.extend({
 
   item: null,
 
+  title: '',
+
   shouldOpen: 0,
 
   _initialize: function(){

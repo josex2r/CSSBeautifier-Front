@@ -10,6 +10,10 @@ export default Ember.Controller.extend({
 
   counter: 0,
 
+  modalTile: function(){
+    return this.get('i18n').t('label.%@'.fmt(this.get('fileType')));
+  }.property('fileType'),
+
   setCssContent: function(){
     var paramName = 'model.%@'.fmt(this.get('fileType'));
     this.set('cssContent', this.get(paramName));

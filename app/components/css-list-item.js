@@ -9,12 +9,14 @@ export default Ember.Component.extend({
 
   isCompleted: Ember.computed.alias('item.isCompleted'),
 
+  isActive: false,
+
   didInsertElement: function () {
     var index = this.get('index');
     var $el = this.$().find('md-item-content');
     setTimeout(function(){
       $el.addClass('relocateCssListItem');
-    }, index * 200);
+    }, index * 100);
   },
 
   flipIcon: function(){
@@ -32,12 +34,16 @@ export default Ember.Component.extend({
   actions: {
     toggleData: function(){
       var self = this;
-
-      this.set('isLoading', true);
-      var adapter = this.store.adapterFor('application');
-      adapter.findOrFetch('css', this.get('item')).then(function(){
-        self.set('isLoading', false);
-      });
+      if(!this.get('isCompleted')){
+        this.set('isLoading', true);
+        var adapter = this.store.adapterFor('application');
+        adapter.findOrFetch('css', this.get('item')).then(function(){
+          self.set('isLoading', false);
+          self.toggleProperty('isActive');
+        });
+      }else if(this.get('isCompleted')){
+        this.toggleProperty('isActive');
+      }
     },
 
     openCssData: function(fileType){

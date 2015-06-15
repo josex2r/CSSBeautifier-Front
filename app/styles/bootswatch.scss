@@ -5714,7 +5714,10 @@ button.close {
   -webkit-appearance: none;
 }
 .modal-open {
-  overflow: hidden;
+  /*overflow: hidden;
+  prevent scroll dissapear*/
+  overflow: scroll;
+  padding-right: 0px !important;
 }
 .modal {
   display: none;
