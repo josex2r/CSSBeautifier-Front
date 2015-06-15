@@ -4,6 +4,17 @@
 
 @import 'ember-paper';
 
+md-content{
+  box-shadow: none;
+  transition: 1.5s;
+}
+md-content.colorize{
+  background-color: rgba(255, 255, 255, .95);
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+md-list > div{
+  background-color: rgba(255, 255, 255, .95);
+}
 .paper-item{
   background-color: rgba(255, 255, 255, .95);
   transition: .8s;

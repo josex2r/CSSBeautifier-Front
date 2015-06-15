@@ -7,37 +7,23 @@ html,body {
   background: #ccc;
   height: 100%;
 }
-h1, .h1, h2, .h2, h3, .h3 {
-    font-family: Proximanovabold,Helvetica,Arial,sans-serif;
-}
-p {
-    font-size: 14px;
-    line-height: 18px;
-    margin: 0 0 10px;
-    color: #666;
-}
-a {
-    color: #16a085;
-    text-decoration: none;
-    -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-a:hover{
-    color: #1abc9c;
-}
+
 #wrap {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto -60px;
 }
+
 .container {
 	width: auto;
 	text-align: center;
 }
+
 #push,#footer {
-        height: 60px;
-      }
+  height: 60px;
+}
+
 #cleaner{
 	background: url("../img/background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -46,10 +32,13 @@ a:hover{
   background-size: cover;
   padding-bottom: 40px;
   margin: 0px;
+  transition: 1s;
 }
+
 #cleaner .row{
 	margin:0px;
 }
+
 /* BUSCADOR */
 .inner-addon {
     position: relative;
@@ -138,4 +127,43 @@ textarea{
 }
 #css_info_msg ul li a{
     float: right;
+}
+
+.flip {
+  -webkit-perspective: 800;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-540deg);
+}
+.flip .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.8s;
+}
+.flip .card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  z-index: 2;
+}
+.flip .card .front {
+  position: absolute;
+  z-index: 1;
+}
+.flip .card .back {
+  -webkit-transform: rotatey(-540deg);
+}
+.flip .card .unknown-icon {
+  background-image: url('/img/unknown-icon.png');
+}
+.flip .card .loading-icon {
+  background-image: url('/img/loading-icon.png');
+}
+.flip .card .css-icon {
+  background-image: url('/img/css-icon.png');
 }

@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import BaseRouteMixin from '../mixins/base-route';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(BaseRouteMixin, {
   model: function(params) {
     var adapter = this.store.adapterFor('application');
 

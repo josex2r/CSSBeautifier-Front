@@ -14,8 +14,20 @@ export default Ember.Component.extend({
     var $el = this.$().find('md-item-content');
     setTimeout(function(){
       $el.addClass('relocateCssListItem');
-    }, index * 600);
+    }, index * 200);
   },
+
+  flipIcon: function(){
+    var $icon = this.$().find('.flip > .card');
+    if(!this.get('isLoading') && !this.get('isCompleted')){
+      $icon.removeClass('flipped');
+    }else if(this.get('isLoading') && !this.get('isCompleted')){
+      $icon.addClass('flipped');
+    }else{
+      $icon.find('.unknown-icon').removeClass('unknown-icon').addClass('css-icon');
+      $icon.removeClass('flipped');
+    }
+  }.observes('isLoading'),
 
   actions: {
     toggleData: function(){
