@@ -1,6 +1,6 @@
-# Beauty-css (Front-End)
+# CSSBeautifier (Front-End)
 
-This repo contains the Front-End application to consume the [Beauty-CSS REST API](https://github.com/avara1986/CSSBeautifier).
+This repo contains the Front-End application to consume the [CSSBeautifier REST API](https://github.com/avara1986/CSSBeautifier).
 
 ## Prerequisites
 
