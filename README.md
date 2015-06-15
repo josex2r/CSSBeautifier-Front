@@ -1,7 +1,6 @@
-# Beauty-css
+# Beauty-css (Front-End)
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This repo contains the Front-End application to consume the [Beauty-CSS REST API](https://github.com/avara1986/CSSBeautifier).
 
 ## Prerequisites
 
