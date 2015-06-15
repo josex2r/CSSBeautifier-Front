@@ -7,10 +7,14 @@
     <div class="container">
       {{#paper-card classNames="col-lg-6 col-lg-offset-3"}}
         {{#paper-card-content}}
-          {{paper-text label="Website URL" classNames="col-lg-10" value=websiteUrl}}
+          {{paper-text label="Website URL" classNames="col-lg-10" value=websiteUrl disabled=inputDisabled}}
 
           {{#paper-button id="searchWebsite" raised=true classNames="md-primary" action="searchWebsite" disabled=searchDisabled}}
-            {{fa-icon "search" size="lg"}}
+            {{#if showSpinner}}
+              {{fa-icon "spinner" size="lg" spin=true}}
+            {{else}}
+              {{fa-icon "search" size="lg"}}
+            {{/if}}
           {{/paper-button}}
         {{/paper-card-content}}
       {{/paper-card}}
