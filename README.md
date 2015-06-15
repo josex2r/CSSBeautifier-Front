@@ -2,6 +2,10 @@
 
 This repo contains the Front-End application to consume the [CSSBeautifier REST API](https://github.com/avara1986/CSSBeautifier).
 
+Hey! Dont forget to change your api host URL.
+The default host is [http://dev.beautycss.com](http://dev.beautycss.com) but maybe your API is configured in a different URL.
+To change the host you have to edit [./app/services/css-api.js](./app/services/css-api.js)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
