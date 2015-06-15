@@ -12,7 +12,10 @@ export default Ember.Component.extend({
     var self = this;
     var $el = this.$().children();
     $el.modal();
-    $el.on('hidden.bs.modal', function (e) {
+    $el.on('shown.bs.modal', function(e){
+      $el.find("textarea").select();
+    });
+    $el.on('hidden.bs.modal', function (e){
       self.sendAction('closeModal');
     });
   }.on('didInsertElement'),
