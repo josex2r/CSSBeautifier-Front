@@ -23,5 +23,10 @@ export default {
     'originalCompressed': 'Comprimido',
     'beauty': 'Limpio',
     'beautyCompressed': 'Optimizado'
+  },
+  'error': {
+    'title': 'Que no cunda el pánico!',
+    'lol': 'Esto no es un fallo de los programadores. Probablemente se han alineado los astros, lo que ha provocado que la aplicación explote.',
+    'retry': 'Inténtalo de nuevo en unos minutos.'
   }
 };

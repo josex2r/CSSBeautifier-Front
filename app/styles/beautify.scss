@@ -72,3 +72,15 @@ html,body {
 .flip .card .css-icon {
   background-image: url('/img/css-icon.png');
 }
+
+
+.errorCard {
+  height: auto;
+  min-height: 200px;
+  background-image: url('/img/error.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  transition: 1s;
+  transform: rotate(5deg);
+}

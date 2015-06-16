@@ -1,13 +1,13 @@
 <div class="container">
-  {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
-    {{#paper-list}}
-      {{#each css in model.css}}
-        {{#view "slide-show-view"}}
+  {{#view "slide-show-view"}}
+    {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
+      {{#paper-list}}
+        {{#each css in model.css}}
           {{css-list-item item=css openCssData="goToCss" index=_view.contentIndex}}
-        {{/view}}
-      {{/each}}
-    {{/paper-list}}
-  {{/paper-content}}
+        {{/each}}
+      {{/paper-list}}
+    {{/paper-content}}
+  {{/view}}
 </div>
 
 <div class="container">
