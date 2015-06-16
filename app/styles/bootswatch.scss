@@ -5716,7 +5716,7 @@ button.close {
 .modal-open {
   /*overflow: hidden;
   prevent scroll dissapear*/
-  overflow: scroll;
+  overflow-y: scroll;
   padding-right: 0px !important;
 }
 .modal {
