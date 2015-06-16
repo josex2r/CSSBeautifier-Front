@@ -16,7 +16,8 @@ export default {
     'original': 'Original',
     'originalCompressed': 'Original Comprimido',
     'beauty': 'Limpio',
-    'beautyCompressed': 'Limpio Comprimido'
+    'beautyCompressed': 'Limpio Comprimido',
+    'cssFile': 'Archivo CSS'
   },
   'btn': {
     'original': 'Original',

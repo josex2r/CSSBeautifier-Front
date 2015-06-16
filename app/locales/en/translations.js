@@ -16,12 +16,18 @@ export default {
     'original': 'Original',
     'originalCompressed': 'Original Compressed',
     'beauty': 'Clean without unsued rules',
-    'beautyCompressed': 'Clean without unsued rules compressed'
+    'beautyCompressed': 'Clean without unsued rules compressed',
+    'cssFile': 'CSS File'
   },
   'btn': {
     'original': 'Original',
     'originalCompressed': 'Compressed',
     'beauty': 'Cleaned',
     'beautyCompressed': 'Optimized'
+  },
+  'error': {
+    'title': 'Don\'t panic!',
+    'lol': 'This is not a fault of the programmers. Probably the stars have aligned, which has broken the application.',
+    'retry': 'Try again in a few minutes.'
   }
 };

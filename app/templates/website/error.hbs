@@ -1,5 +1,11 @@
-<h1>ERROR</h1>
-<p>Ready state: {{model.readyState}}</p>
-<p>Response: {{model.responseText}}</p>
-<p>Status code: {{model.status}}</p>
-<p>Status text: {{model.statusText}}</p>
+{{#paper-card classNames="errorCard col-md-6 col-md-offset-3"}}
+  {{#paper-card-content}}
+    <div class="row">
+      <div class="col-xs-6 col-sm-7 col-md-10">
+        <h1>{{t "error.title"}}</h1>
+        <h3>{{t "error.lol"}}</h3>
+        <h3>{{t "error.retry"}}</h3>
+      </div>
+    </div>
+  {{/paper-card-content}}
+{{/paper-card}}
