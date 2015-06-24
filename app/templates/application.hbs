@@ -3,12 +3,16 @@
   <div id="cleaner">
 
     <div class="lang-container">
-      {{#paper-button raised=true action="searchWebsite"}}
-        <span {{action 'switchLang' 'es'}}>ES</span>
-      {{/paper-button}}
-      {{#paper-button raised=true action="searchWebsite"}}
-        <span {{action 'switchLang' 'en'}}>EN</span>
-      {{/paper-button}}
+      <div {{action 'switchLang' 'es'}}>
+        {{#paper-button raised=true action="switchLang" disabled=esLocale}}
+          <span>ES</span>
+        {{/paper-button}}
+      </div>
+      <div {{action 'switchLang' 'en'}}>
+        {{#paper-button raised=true action="switchLang" disabled=enLocale}}
+          <span>EN</span>
+        {{/paper-button}}
+      </div>
     </div>
 
     <div class="clearfix"></div>

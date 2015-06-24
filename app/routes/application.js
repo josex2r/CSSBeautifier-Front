@@ -1,6 +1,7 @@
 import Ember from 'ember';
-import LocaleMixin from '../mixins/locale';
+import LocaleRouteMixin from '../mixins/locale-route';
+import BaseRouteMixin from '../mixins/base-route';
 
-export default Ember.Route.extend(LocaleMixin, {
+export default Ember.Route.extend(LocaleRouteMixin, BaseRouteMixin, {
 
 });

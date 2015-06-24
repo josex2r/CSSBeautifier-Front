@@ -1,7 +1,7 @@
 import Ember from 'ember';
-import BaseControllerMixin from '../mixins/base-controller';
+import AppController from './application';
 
-export default Ember.Controller.extend(BaseControllerMixin, {
+export default AppController.extend({
 
   currentFileType: 'original',
 

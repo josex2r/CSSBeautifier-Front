@@ -5,7 +5,7 @@ export default Ember.Object.extend({
   /*
    * API Host
    */
-  host: 'http://dev.beautycss.com',
+  host: 'http://api.cssbeautifier.com',
 
   /*
    * API namespace

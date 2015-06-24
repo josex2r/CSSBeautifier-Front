@@ -15,9 +15,9 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com www.google-analytics.com",
       'font-src': "'self' fonts.gstatic.com data: use.typekit.net",
-      'connect-src': "'self' api.github.com dev.beautycss.com",
+      'connect-src': "'self' api.github.com dev.beautycss.com api.cssbeautifier.com",
       'img-src': "'self' www.facebook.com p.typekit.net www.google-analytics.com",
       'style-src': "'self' 'unsafe-inline' use.typekit.net",
       'frame-src': "'self' s-static.ak.facebook.com static.ak.facebook.com www.facebook.com"

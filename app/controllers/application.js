@@ -1,6 +1,8 @@
 import Ember from 'ember';
+import LocaleControllerMixin from '../mixins/locale-controller';
+import BaseControllerMixin from '../mixins/base-controller';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(LocaleControllerMixin, BaseControllerMixin, {
 
   websiteUrl: '',
 
